@@ -1,16 +1,17 @@
 window.onload = function () {
-    alert("Найти наибольшее с двух чисел");
-    var firstNumber = prompt("Введите первое число");
-    var secondNumber = prompt("Введите второе число");
-    /* if(firstNumber<secondNumber){
-     alert("Наибольшее с чисел "+firstNumber +" и "+secondNumber+". "+" Число "+secondNumber );
-     }
-     else if(a>b){
-     alert("Наибольшее с чисел "+firstNumber +" и "+secondNumber+". "+" Число "+firstNumber );
-     }
-     else{
-     alert("Числа равны"+firstNumber+" и "+secondNumber+" равны");
-     }*/
+    evenNumber();
+    listNumber();
+    summa();
+    table7D();
+    addition();
+    showUnicode();
+};
+
+/*
+ = function () {
+      alert("Найти наибольшее с двух чисел");
+    var firstNumber = document.getElementById('first-number').value;
+    var secondNumber = document.getElementById('second-number').value;
 
     (firstNumber==secondNumber) ? alert("Числа равны"):((firstNumber <secondNumber) ? alert("Второе число больше"):alert("Первое число больше"));
 
@@ -18,7 +19,7 @@ window.onload = function () {
     alert("Задание №3");
     alert(" Определить номер квартиры по введенному числу");
     var numberRoom = prompt("Введите номер квартиры");
-    /*if(numberRoom >=1 && numberRoom <=80){
+    if(numberRoom >=1 && numberRoom <=80){
      if(numberRoom >=1 && numberRoom <=20){
      alert("1 подъезд");
      }
@@ -32,7 +33,7 @@ window.onload = function () {
      else{
      alert("Квартиры с таким номеером нет");
      }
-     */
+
 
     (numberRoom >= 1 && numberRoom <= 80) ? (
         (numberRoom >= 1 && numberRoom <= 20) ? alert("1 подъезд") :
@@ -169,6 +170,11 @@ window.onload = function () {
         p.innerHTML = p.innerHTML+"&#"+i+"<br>";
     }
 };
+
+*/
+
+
+//ЗАДАНИЕ 1
 function getYearOld(){
     var enterYear = document.getElementById('yearOld').value;
     var currentYear = new Date().getFullYear();
@@ -185,4 +191,129 @@ function getYearOld(){
     alert("Вам"+old+" лет");
 }
 
+
+//ЗАДАНИЕ 2
+
+function Max() {
+    alert("test");
+    var firstNumber = document.getElementById('first-number').value;
+    var secondNumber = document.getElementById('second-number').value;
+    var max = (firstNumber == secondNumber) ? firstNumber:((firstNumber < secondNumber) ? secondNumber : firstNumber);
+    document.getElementById("result").innerHTML = max;
+}
+
+function getHouseNumber() {
+    var numberRoom = document.getElementById('number-room').value;
+    var getHouse = (numberRoom >= 1 && numberRoom <= 80) ? (
+        (numberRoom >= 1 && numberRoom <= 20) ? "1 подъезд" :
+            (numberRoom >= 21 && numberRoom <= 64) ? "2 подъезд" : "3 подъезд"
+    )
+        : "Квартиры с таким номеером нет";
+
+    document.getElementById("house-number").innerHTML = getHouse;
+}
+
+function auth() {
+var userName = document.getElementById('user-name').value;
+var password = document.getElementById('password').value;
+    if ((userName == "ivan" && password == "333") || (userName == "ssss" && password == "666") || (userName == "gibs " && password == "000")) {
+        alert("Добро пожаловать!");
+    }
+    else {
+        alert("Ошибка");
+    }
+}
+
+
+function max3D() {
+    var firstNumber = document.getElementById('first').value;
+    var secondNumber = document.getElementById('second').value;
+    var thirdNumber = document.getElementById('third').value;
+    var max = null;
+    if( firstNumber == secondNumber && secondNumber == thirdNumber){
+       max = firstNumber;
+    }
+    else {
+        if ((firstNumber > secondNumber) && (firstNumber > thirdNumber)) {
+           max = firstNumber;
+        }
+        else if (secondNumber > thirdNumber) {
+            max = secondNumber;
+        }
+        else {
+            max = thirdNumber;
+        }
+    }
+    document.getElementById("max").innerHTML = max;
+}
+
+function evenNumber() {
+    var body = document.getElementsByTagName('body')[0];
+    var ol = document.createElement('ol');
+    body.appendChild(ol);
+    for (var i = 0; i < 101; i++) {
+        if (i % 2 == 0) {
+            var li = document.createElement('li');
+            ol.appendChild(li);
+            li.innerHTML = li.innerHTML + i;
+        }
+    }
+}
+
+function listNumber(){
+    var body = document.getElementsByTagName('body')[0];
+    var ul = document.createElement('ul');
+    body.appendChild(ul);
+    for (var i = 200; i >= 0; i--) {
+        var li = document.createElement('li');
+        ul.appendChild(li);
+        li.innerHTML = li.innerHTML + i;
+    }
+}
+
+function summa() {
+    var summ = 0;
+    for(var i =0; i<100;i++){
+        summ+=i;
+    }
+    document.getElementById("summa").innerHTML = summ;
+
+}
+
+function getPower() {
+    var mult = 1;
+    var number = document.getElementById('number').value;
+    var powered = document.getElementById('power').value;
+    for (var i = 1; i <= powered; i++) {
+        mult = mult * number;
+    }
+    document.getElementById("result-power").innerHTML = mult;
+}
+
+function table7D() {
+    var body = document.getElementsByTagName('body')[0];
+    var p = document.createElement('p');
+    for(var i = 1 ; i<=10;i++){
+        body.appendChild(p);
+        p.innerHTML = p.innerHTML+i*7+"<br>";
+    }
+}
+
+function addition(){
+    var mul = 1;
+    for(var i = 1 ; i<=50;i++){
+        mul*=i;
+
+    }
+    document.getElementById("addition").innerHTML = mul;
+}
+
+function showUnicode() {
+    var body = document.getElementsByTagName('body')[0];
+    var p = document.createElement('p');
+    for(var i = 1000 ; i<=2000;i++){
+        body.appendChild(p);
+        p.innerHTML = p.innerHTML+"&#"+i+"<br>";
+    }
+}
 
