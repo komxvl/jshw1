@@ -229,8 +229,11 @@ function max3D() {
     var firstNumber = document.getElementById('first').value;
     var secondNumber = document.getElementById('second').value;
     var thirdNumber = document.getElementById('third').value;
+	
+	console.log(firstNumber,secondNumber,thirdNumber);
     var max = null;
-    if( firstNumber == secondNumber && secondNumber == thirdNumber){
+	max = Math.max(firstNumber,secondNumber,thirdNumber);
+   /* if( firstNumber == secondNumber && secondNumber == thirdNumber){
        max = firstNumber;
     }
     else {
@@ -243,31 +246,33 @@ function max3D() {
         else {
             max = thirdNumber;
         }
-    }
+    }*/
     document.getElementById("max").innerHTML = max;
 }
 
 function evenNumber() {
     var body = document.getElementsByTagName('body')[0];
-    var ol = document.createElement('ol');
-    body.appendChild(ol);
+    var div = document.createElement('div');
+    body.appendChild(div);
+    div.id="odd";
     for (var i = 0; i < 101; i++) {
         if (i % 2 == 0) {
-            var li = document.createElement('li');
-            ol.appendChild(li);
-            li.innerHTML = li.innerHTML + i;
+            var span = document.createElement('span');
+            div.appendChild(span);
+            span.innerHTML = span.innerHTML + i;
         }
     }
 }
 
 function listNumber(){
     var body = document.getElementsByTagName('body')[0];
-    var ul = document.createElement('ul');
-    body.appendChild(ul);
+   var div = document.createElement('div');
+    div.id= "test";
+    body.appendChild(div);
     for (var i = 200; i >= 0; i--) {
-        var li = document.createElement('li');
-        ul.appendChild(li);
-        li.innerHTML = li.innerHTML + i;
+        var span = document.createElement('span');
+        div.appendChild(span);
+        span.innerHTML = span.innerHTML + i;
     }
 }
 
@@ -310,10 +315,13 @@ function addition(){
 
 function showUnicode() {
     var body = document.getElementsByTagName('body')[0];
-    var p = document.createElement('p');
+    var div = document.createElement('div');
+    div.id= "unicode";
+    body.appendChild(div);
     for(var i = 1000 ; i<=2000;i++){
-        body.appendChild(p);
-        p.innerHTML = p.innerHTML+"&#"+i+"<br>";
+        var span = document.createElement('span');
+        div.appendChild(span);
+        span.innerHTML = span.innerHTML +"&#"+i;
     }
 }
 
